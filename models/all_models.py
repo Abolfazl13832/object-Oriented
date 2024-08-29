@@ -23,10 +23,9 @@ class Customer (User):
 
     def __str__(self):
         return self.username
-
-    def __check_password(self,password):
+    def check_password(self,password):
         return self.password == password
-    
+    @property
     def set_enable(self):
         self.enable = True
 
