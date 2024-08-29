@@ -1,4 +1,5 @@
 class User:
+
     def __init__(self,username,password,fullname,email):
         self.username = username
         self.password = password
@@ -7,6 +8,7 @@ class User:
     
     def check_password(self,password):
         return self.password == password
+    
 
 
 
@@ -20,12 +22,25 @@ class Customer (User):
         Customer.counter+=1
         super().__init__(username,password,fullname,email)
 
+    @classmethod
+    def singup(cls,username,password,fullname,email):
+        
+        if len(str(password)) <=5:
+            print("try again")
+            return None
+        else:
+            print("success")
+            return cls(username,password,fullname,email)
+
+        
+        
+        
 
     def __str__(self):
         return self.username
     def check_password(self,password):
         return self.password == password
-    @property
+
     def set_enable(self):
         self.enable = True
 

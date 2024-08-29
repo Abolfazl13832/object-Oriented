@@ -3,5 +3,4 @@ from models.all_models import Customer
 
 
 
-Customer(1,2,34,5)
-print(Customer.set_enable)
+Customer.singup("1",234545676,3,4)
