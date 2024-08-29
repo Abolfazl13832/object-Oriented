@@ -22,15 +22,15 @@ class Customer (User):
         Customer.counter+=1
         super().__init__(username,password,fullname,email)
 
-    @classmethod
-    def singup(cls,username,password,fullname,email):
-        
+    @staticmethod
+    def singup(username,password,fullname,email):
         if len(str(password)) <=5:
             print("try again")
             return None
         else:
             print("success")
-            return cls(username,password,fullname,email)
+            c1 = Customer(username,password,fullname,email)
+            return c1
 
         
         
